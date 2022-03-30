@@ -25,39 +25,41 @@ For example, if you use next.js 12.1.0 in its standard state, you will face this
 If `window.history.replaceState` is not used after a `POST` transition, any browser will perform another `POST`.
 <!-- `POST`遷移後に`window.history.replaceState`を利用しない場合は、どのブラウザも再度`POST`が実行されます。 -->
 
-
-## Experiments
+## Demo Movie
 
 ### Google Chrome
 
 `Version 100.0.4896.60 (Official Build) (x86_64)`
 
-![Google Chrome](./movie/chrome.mov)
+https://user-images.githubusercontent.com/6715229/160755200-22ccfc7b-9205-4cc7-b622-7f379f4e1a0a.mov
+
 
 ### Firefox
 
 `98.0.2 (64-bit)`
 
-![Firefox](./movie/firefox.mov)
+[![Firefox](./movie/firefox.mov)](https://user-images.githubusercontent.com/6715229/160755206-f11b9e3d-b7e4-470b-af4b-2816fbba7769.mov)
 
 ### Safari
 
 `Version 14.1.2 (15611.3.10.1.5, 15611)`
 
-![Safari](./movie/safari.mov)
+[![Safari](./movie/safari.mov)](https://user-images.githubusercontent.com/6715229/160755213-06b69ff9-eeef-4e52-b1ac-c10ff12c9d1d.mov)
 
-## Setup
+## How to reproduce
 
 ```bash
 pnpm i
 pnpm run server
+# Open http://localhost:3000
 ```
 
 or
 
-```bas
+```bash
 yarn
 yarn run server
+# Open http://localhost:3000
 ```
 
 or
@@ -65,6 +67,7 @@ or
 ```bash
 npm i
 npm run server
+# Open http://localhost:3000
 ```
 
 ## License
