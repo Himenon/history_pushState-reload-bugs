@@ -3,8 +3,7 @@
 	"private": true,
 	"license": "MIT",
 	"scripts": {
-		"server1": "cross-env PORT=3000 nodemon --watch server1.ts --exec \"ts-node -P tsconfig.json server1.ts\"",
-		"server2": "cross-env PORT=4000 nodemon --watch server2.ts --exec \"ts-node -P tsconfig.json server2.ts\""
+		"server": "cross-env PORT=3000 nodemon --watch server.ts --exec \"ts-node -P tsconfig.json server.ts\""
 	},
 	"dependencies": {
 		"compression": "^1.7.4",
@@ -29,9 +28,6 @@
 		"typescript": "^4.6.3"
 	},
 	"engines": {
-		"node": ">=16",
-		"npm": "forbidden, use pnpm",
-		"pnpm": ">=6",
-		"yarn": "forbidden, use pnpm"
+		"pnpm": ">=6"
 	}
 }
