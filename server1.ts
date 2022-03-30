@@ -17,13 +17,26 @@ app.get("/", (req, res) => {
   res.send(html);
 });
 
-app.post("/register", (req, res) => {
-  const html = view.getConfirm({
-    comment: req.body.comment,
-  });
-  res.send(html);
+app.get("/register", (req, res) => {
+  res.send("<h1>Pages that should not be displayed on page reload after POST.</h1>");
 });
 
-app.listen(SERVER_PORT, () => {
+app.post("/register", (req, res) => {
+  const html = view.getConfirm(req.body.comment);
+  res.status(303).send(html);
+});
+
+app.get("/register-history-push-state", (req, res) => {
+  res.send("<h1>Pages that should not be displayed on page reload after POST.</h1>");
+});
+
+app.post("/register-history-push-state", (req, res) => {
+  const html = view.getConfirmHistoryPushState(req.body.comment, req.url);
+  res.status(303).send(html);
+});
+
+const httpServer = app.listen(SERVER_PORT, () => {
   console.log(`Serve start: http://localhost:${SERVER_PORT}`);
 });
+
+httpServer.keepAliveTimeout = 0;

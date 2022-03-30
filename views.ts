@@ -5,19 +5,24 @@ const readFileSync = (path: string) => fs.readFileSync(path, "utf-8");
 const templates = {
   form: readFileSync("./views/form.html"),
   confirm: readFileSync("./views/confirm.html"),
+  confirmHistoryPushState: readFileSync(
+    "./views/confirm-history-push-state.html"
+  ),
 };
-
-export interface Confirm {
-  comment: string;
-}
 
 export class View {
   public getForm(): string {
     return templates.form;
   }
 
-  public getConfirm(props: Confirm): string {
-    const html = templates.confirm.replace(/{{ comment }}/g, props.comment);
+  public getConfirm(comment: string): string {
+    const html = templates.confirm.replace(/{{ comment }}/g, comment);
+    return html;
+  }
+
+  public getConfirmHistoryPushState(comment: string, url: string): string {
+    const html = templates.confirmHistoryPushState
+      .replace(/{{ url }}/g, url);
     return html;
   }
 }

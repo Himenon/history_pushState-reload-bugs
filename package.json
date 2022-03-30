@@ -3,8 +3,8 @@
 	"private": true,
 	"license": "MIT",
 	"scripts": {
-		"server1": "cross-env PORT=3000 nodemon --watch *.ts --exec \"ts-node -P tsconfig.json server1.ts\"",
-		"server2": "cross-env PORT=4000 nodemon --watch *.ts --exec \"ts-node -P tsconfig.json server2.ts\""
+		"server1": "cross-env PORT=3000 nodemon --watch server1.ts --exec \"ts-node -P tsconfig.json server1.ts\"",
+		"server2": "cross-env PORT=4000 nodemon --watch server2.ts --exec \"ts-node -P tsconfig.json server2.ts\""
 	},
 	"dependencies": {
 		"compression": "^1.7.4",
